@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACNHBugGuide.Models", "ACNHBugGuide.Models\ACNHBugGuide.Models.csproj", "{CC863974-AC7B-42CD-AA66-31A18559C0C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACNHBugGuide.Web", "ACNHBugGuide.Web\ACNHBugGuide.Web.csproj", "{B5B421F4-05C5-46E6-8527-76DF011CEAFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{CC863974-AC7B-42CD-AA66-31A18559C0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC863974-AC7B-42CD-AA66-31A18559C0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC863974-AC7B-42CD-AA66-31A18559C0C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B421F4-05C5-46E6-8527-76DF011CEAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B421F4-05C5-46E6-8527-76DF011CEAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B421F4-05C5-46E6-8527-76DF011CEAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B421F4-05C5-46E6-8527-76DF011CEAFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
