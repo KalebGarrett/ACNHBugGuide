@@ -1,26 +1,26 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ACNHBugGuide.Web.Models;
+using ACNHBugGuide.Web.Services;
 
 namespace ACNHBugGuide.Web.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly BugService _bugService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, BugService bugService)
     {
         _logger = logger;
+        _bugService = bugService;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
+        var model = new IndexViewModel();
+        model.Bugs = await _bugService.GetAll();
+        return View(model);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

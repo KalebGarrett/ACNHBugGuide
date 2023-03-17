@@ -1,7 +1,10 @@
+using ACNHBugGuide.Web.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<BugService>();
 
 var app = builder.Build();
 
