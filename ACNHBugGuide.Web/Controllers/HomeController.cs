@@ -23,6 +23,19 @@ public class HomeController : Controller
         return View(model);
     }
 
+    [HttpGet("bug/{fileName}")]
+    public async Task<IActionResult> Bug(string fileName)
+    {
+        var model = new BugViewModel();
+        model.Bug = await _bugService.Get(fileName);
+        if (model.Bug == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        return View(model);
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

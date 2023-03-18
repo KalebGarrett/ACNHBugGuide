@@ -1,0 +1,19 @@
+﻿@model BugViewModel
+
+@{
+    ViewData["Title"] = $"Bug - {Model.Bug.Name.NameUSen}";
+}
+
+<h1>@Model.Bug.Name.NameEUen</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <img src="@Model.Bug.IconUri" alt="@Model.Bug.Name.NameUSen" style="height: 96px"/>
+        
+       <h2>Name</h2>
+       @Model.Bug.Name.NameEUen
+        
+        
+        
+    </div>
+</div>

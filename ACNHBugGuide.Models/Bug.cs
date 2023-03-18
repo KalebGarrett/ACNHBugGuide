@@ -6,7 +6,8 @@ namespace ACNHBugGuide.Models;
 public class Bug
 {
     [JsonPropertyName("id")] public int Id { get; set; }
-
+    
+    /// Use for lookups
     [JsonPropertyName("file-name")] public string FileName { get; set; }
 
     [JsonPropertyName("name")] public Name Name { get; set; }
