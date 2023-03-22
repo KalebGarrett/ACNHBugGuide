@@ -4,16 +4,44 @@
     ViewData["Title"] = $"Bug - {Model.Bug.Name.NameUSen}";
 }
 
-<h1>@Model.Bug.Name.NameEUen</h1>
+<h1 class="bug-title">@Model.Bug.Name.NameEUen</h1>
 
 <div class="row">
     <div class="col-md-8">
-        <img src="@Model.Bug.IconUri" alt="@Model.Bug.Name.NameUSen" style="height: 96px"/>
-        
-       <h2>Name</h2>
-       @Model.Bug.Name.NameEUen
-        
-        
-        
+        <h2>Catch Phrase</h2>
+        @Model.Bug.CatchPhrase
+
+        <h2>Museum Phrase</h2>
+        @Model.Bug.MuseumPhrase
     </div>
+</div>
+
+<div class="col-md-4">
+    <table class="table table-bordered">
+        <tr>
+            <th>@Model.Bug.Name.NameEUen</th>
+        </tr>
+        <tr>
+            <th>
+                <img src="@Model.Bug.IconUri" alt="@Model.Bug.Name.NameUSen" style="height: 96px"/>
+            </th>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>@Model.Bug.Price</td>
+        </tr>
+
+        <tr>
+            <th>Location</th>
+            <td>@Model.Bug.Availability.Location</td>
+        </tr>
+
+        <tr>
+            @if (Model.Bug.Availability.Time != null)
+            {
+                <th>Time</th>
+                <td>@Model.Bug.Availability.Time</td>
+            }
+        </tr>
+    </table>
 </div>

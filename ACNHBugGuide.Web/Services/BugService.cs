@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Collections.Generic;
 using ACNHBugGuide.Models;
 
 namespace ACNHBugGuide.Web.Services;
@@ -36,5 +37,15 @@ public class BugService
         var bug = Bugs?.FirstOrDefault(x => x.FileName == fileName.ToLower());
         return bug;
     }
-    
+
+    public async Task<List<Bug>> Search(string query)
+    {
+        if (Bugs == null)
+        {
+            await GetAll();
+        }
+
+        var bugs = Bugs.Where(x => x.Name.NameUSen.ToLower().Contains(query.ToLower()));
+        return bugs.ToList();
+    }
 }

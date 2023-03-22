@@ -1,25 +1,27 @@
-﻿@using ACNHBugGuide.Models
-@model IndexViewModel
+﻿@model SearchViewModel
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Search";
 }
 
-<h1>ACNH Bug Guide</h1>
+<h1>Search Results</h1>
+<h2>@Model.Results.Count Results For "@Model.Query"</h2>
+
 <table class="table">
     <tr>
         <th>Name</th>
         <th>Image</th>
         <th>Price</th>
-        <th>Rarity</th>
+        <th>Time</th>
     </tr>
     
-    @foreach (var bug in Model.Bugs.OrderBy(x => x.Name.NameUSen))
+    @foreach (var bug in Model.Results.OrderBy(x => x.Name.NameUSen))
     {
         <tr>
             <td>@bug.Name.NameUSen</td>
             <td><img src="@bug.IconUri" alt="@bug.Name.NameUSen" style="height: 64px"/></td>
             <td>@bug.Price</td>
-            <td>@bug.Availability.Rarity</td>
+            <td>@bug.Availability.Time</td>
             <td>
                 <a href="/bug/@bug.FileName">Info</a>
             </td>

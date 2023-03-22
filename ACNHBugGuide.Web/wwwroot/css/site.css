@@ -17,6 +17,14 @@ html {
   font-family: Lato, sans-serif;
 }
 
+.navbar {
+  background-color: #0b9c12;
+}
+
+h2 {
+  padding-top: 1rem;
+}
+
 body {
   margin-bottom: 60px;
 }

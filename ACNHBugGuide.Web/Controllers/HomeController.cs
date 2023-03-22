@@ -36,6 +36,16 @@ public class HomeController : Controller
         return View(model);
     }
 
+    [HttpGet("search")]
+    [HttpPost("search")]
+    public async Task<IActionResult> SearchResults(string query)
+    {
+        var model = new SearchViewModel();
+        model.Query = query;
+        model.Results = await _bugService.Search(query);
+        return View(model);
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
