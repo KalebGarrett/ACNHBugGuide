@@ -19,7 +19,8 @@ public class BugService
             var json = await result.Content.ReadAsStringAsync();
 
             var dictionary = JsonSerializer.Deserialize<Dictionary<string, Bug>>(json);
-            return dictionary.Values.ToList();
+            Bugs = dictionary.Values.ToList();
+            return Bugs;
         }
 
         return new List<Bug>();
@@ -32,7 +33,7 @@ public class BugService
             await GetAll();
         }
         
-        var bug = Bugs.FirstOrDefault(x => x.FileName == fileName.ToLower());
+        var bug = Bugs?.FirstOrDefault(x => x.FileName == fileName.ToLower());
         return bug;
     }
     
