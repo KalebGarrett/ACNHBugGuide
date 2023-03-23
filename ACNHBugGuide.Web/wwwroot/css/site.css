@@ -21,10 +21,30 @@ html {
   background-color: #0b9c12;
 }
 
-h2 {
-  padding-top: 1rem;
-}
-
 body {
   margin-bottom: 60px;
+}
+
+.info-btn {
+  font-size: 16px;
+  color: #fafbfc;
+  background-color: #198754;
+  text-decoration: none;
+  padding:0.4em 1em;
+  border-radius: 8px;
+  transition: all .5s ease-in-out;
+}
+
+.info-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.info-btn:active {
+  opacity: 0.5;
+}
+
+.info-btn:focus {
+  outline: none;
 }
