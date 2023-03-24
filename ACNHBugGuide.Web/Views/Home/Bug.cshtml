@@ -3,60 +3,60 @@
 @{
     ViewData["Title"] = $"Bug - {Model.Bug.Name.NameUSen}";
 }
-<img src="@Model.Bug.IconUri" alt="@Model.Bug.Name.NameUSen" style="height: 128px"/>
-
-<div class="col-md-4">
-    <h2>Name</h2>
-    @Model.Bug.Name.NameUSen.ToUpper()
-
-    <h2 style="padding-top: 1rem">Information</h2>
-
-    <table class="table table-bordered table-striped">
-        <tr>
-            <th>Name</th>
-            <td>@Model.Bug.Name.NameEUen.ToUpper()</td>
-        </tr>
-        <tr>
-            <th>Price</th>
-            <td>@Model.Bug.Price</td>
-        </tr>
-        <tr>
-            <th>Flick's Price</th>
-            <td>@Model.Bug.PriceFlick</td>
-        </tr>
-        <tr>
-            <th>Location</th>
-            <td>@Model.Bug.Availability.Location</td>
-        </tr>
-        @if (Model.Bug.Availability.Time != null)
-        {
-            <tr>
-                <th>Time</th>
-                <td>@Model.Bug.Availability.Time</td>
-            </tr>
-        }
-        <tr>
-            <th>Northern Hemisphere</th>
-            <td>@Model.Bug.Availability.MonthNorthern</td>
-        </tr>
-        <tr>
-
-            <th>Northern Southern</th>
-            <td>@Model.Bug.Availability.MonthSouthern</td>
-        </tr>
-        <tr>
-            <th>Rarity</th>
-            <td>@Model.Bug.Availability.Rarity</td>
-        </tr>
-    </table>
-</div>
 
 <div class="row">
     <div class="col-md-8">
+        <img src="@Model.Bug.IconUri" alt="@Model.Bug.Name.NameUSen" style="height: 128px"/>
+        
+        <h2>Name</h2>
+        @Model.Bug.Name.NameUSen.ToUpper()
+
         <h2 style="padding-top: 1rem">Catch Phrase</h2>
         @Model.Bug.CatchPhrase
 
         <h2 style="padding-top: 1rem">Museum Phrase</h2>
         @Model.Bug.MuseumPhrase
+
+    </div>
+    <div class="col-md-4">
+        <h2 style="padding-top: 1rem">Information</h2>
+
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Name</th>
+                <td>@Model.Bug.Name.NameEUen.ToUpper()</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>@Model.Bug.Price</td>
+            </tr>
+            <tr>
+                <th>Flick's Price</th>
+                <td>@Model.Bug.PriceFlick</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>@Model.Bug.Availability.Location</td>
+            </tr>
+            @if (Model.Bug.Availability.Time != null)
+            {
+                <tr>
+                    <th>Time</th>
+                    <td>@Model.Bug.Availability.Time</td>
+                </tr>
+            }
+            <tr>
+                <th>Northern Hemisphere</th>
+                <td>@Model.Bug.Availability.MonthNorthern</td>
+            </tr>
+            <tr>
+                <th>Southern Hemisphere</th>
+                <td>@Model.Bug.Availability.MonthSouthern</td>
+            </tr>
+            <tr>
+                <th>Rarity</th>
+                <td>@Model.Bug.Availability.Rarity</td>
+            </tr>
+        </table>
     </div>
 </div>

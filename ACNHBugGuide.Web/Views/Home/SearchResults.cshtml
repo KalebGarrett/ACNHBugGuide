@@ -6,29 +6,4 @@
 
 <h1>Search Results</h1>
 <h2>@Model.Results.Count Results For "@Model.Query"</h2>
-
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Price</th>
-        <th>Rarity</th>
-    </tr>
-
-    @foreach (var bug in Model.Results.OrderBy(x => x.Name.NameUSen))
-    {
-        <tr>
-            <td>@bug.Name.NameUSen</td>
-            <td>
-                <img src="@bug.IconUri" alt="@bug.Name.NameUSen" style="height: 64px"/>
-            </td>
-            <td>@bug.Price</td>
-            <td>@bug.Availability.Rarity</td>
-            <td>
-                <a href="/bug/@bug.FileName" class="btn info-btn">
-                    <i class="fa-solid fa-info" style="color: #ffffff;"></i>
-                </a>
-            </td>
-        </tr>
-    }
-</table>
+@Html.Partial("BugTable", Model.Results)
